@@ -36,18 +36,18 @@ namespace SyncCloud.Controllers
             ViewBag.Title = "Home Page";
             ViewBag.IsDropboxAuthorized = false;
             _exactOnlineService.Authorize(HttpContext.Session);
-            if(_exactOnlineService.Authorization==null)
+            if (_exactOnlineService.Authorization == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
             }
             var me = _exactOnlineService.GetCurrentMe();
-            var userAuthorization=_storageService.GetUserByExactUserId(me.UserID);
+            var userAuthorization = _storageService.GetUserByExactUserId(me.UserID);
             var _userAuthorization = new AuthorizedUserModel { CurrentMe = me, ExactAuthorization = _exactOnlineService.Authorization };
             if (userAuthorization == null)
             {
                 _storageService.Add(_userAuthorization);
             }
-            else if(userAuthorization.DropboxAuthorization!=null)
+            else if (userAuthorization.DropboxAuthorization != null)
             {
                 ViewBag.IsDropboxAuthorized = true;
             }
