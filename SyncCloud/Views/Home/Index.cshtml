@@ -1,0 +1,52 @@
+﻿@model List<SyncCloud.Models.FileReferenceModel>
+<div class="row" style="border-bottom:1px solid black">
+    <h3>Available Sources</h3>
+</div>
+<div class="row">
+    <div style="margin:10px 15px 0px 0px;">
+        @if (!ViewBag.IsDropboxAuthorized)
+        {
+            <a class="btn btn-default" href="@Url.Action("Dropbox", "Home")">Sign In to Dropbox</a>
+        }
+        else
+        {
+            <h5>Dropbox connected!</h5>
+        }
+    </div>
+</div>
+    <div class="row" style="border-bottom:1px solid black">
+        <h3>Sync History</h3>
+    </div>
+    <div class="row">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>User</th>
+                        <th>File Name</th>
+                        <th>File Path</th>
+                        <th>File Size(KB)</th>
+                        <th>Sync Date</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    @{int counter = 1; }
+
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>@counter</td>
+                        <td>@item.UserName</td>
+                        <td>@item.FileName</td>
+                        <td>@item.FilePath</td>
+                        <td>@(item.FileSize/1024)</td>
+                        <td>@item.CreatedDate.ToString("dd-MM-yyyy mm:ss")</td>
+                    </tr>
+                        counter++;
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
