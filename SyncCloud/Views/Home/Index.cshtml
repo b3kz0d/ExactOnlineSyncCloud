@@ -44,7 +44,7 @@
                         <td>@item.UserName</td>
                         <td>@item.FileName</td>
                         <td>@item.FilePath</td>
-                        <td>@(item.FileSize/1024)</td>
+                        <td>@string.Format("{0:0.000}",(item.FileSize/(decimal)1024))</td>
                         <td>@item.CreatedDate.ToString("dd-MM-yyyy mm:ss")</td>
                     </tr>
                         counter++;
