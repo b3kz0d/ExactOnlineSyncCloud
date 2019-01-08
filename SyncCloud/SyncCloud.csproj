@@ -228,6 +228,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\DropboxController.cs" />
+    <Compile Include="Helpers\Helper.cs" />
     <Compile Include="Models\DropboxWebHookInputModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
