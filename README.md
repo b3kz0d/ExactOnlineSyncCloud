@@ -12,7 +12,7 @@ Create TestApp and you'll retrieve clientId and clientSecret. Don't forget to co
 
 #### Prerequisites 
 
-If you want to run tha application local machine you'll need to prepare the application running environment. OAuth2 and Dropbox webhook requires domain name. We suggest you to install [ngrok](http://ngrok.io/) for tunneling requests to your local machine.
+If you want to run tha application local machine you'll need to prepare the application running environment. OAuth2 and Dropbox webhook requires domain name. We suggest you to install [ngrok](http://ngrok.io/) or [Conveyor](https://conveyor.cloud/) for tunneling requests to your local machine. [Conveyor](https://conveyor.cloud/) available at [NuGet Package Manager](https://www.nuget.org/)
 
 #### Running the tests 
 
